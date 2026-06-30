@@ -34,6 +34,18 @@ function Recados() {
         }
     }
 
+    async function handleLogout() {
+    try {
+        await api.post('/logout');
+    } catch (error) {
+        console.error(error);
+    }
+
+    localStorage.removeItem('token');
+
+    window.location.reload();
+    }
+
     async function handleEditar(id, campos) {
         try {
             await api.put(`/recados/${id}`, campos);
@@ -78,6 +90,9 @@ function Recados() {
 
     return (
         <div>
+            <button onClick={handleLogout}>
+            Sair</button>
+            
             <h1>Meus Recados</h1>
 
             <RecadoForm onCriar={handleCriar} />
