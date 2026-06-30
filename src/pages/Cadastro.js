@@ -2,41 +2,43 @@ import { useState } from 'react';
 import api from '../services/api';
 
 function Cadastro({ onCancelar }) {
+
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirmation, setPasswordConfirmation] = useState('');
     const [erro, setErro] = useState('');
-    const [sucesso, setSucesso] = useState('');
 
     async function handleSubmit(e) {
+
         e.preventDefault();
 
         setErro('');
-        setSucesso('');
 
         try {
+
             await api.post('/register', {
                 name,
                 email,
                 password,
-                password_confirmation: passwordConfirmation
+                password_confirmation: passwordConfirmation,
             });
 
-            setSucesso('Cadastro realizado com sucesso!');
+            alert('Cadastro realizado com sucesso!');
 
-            setName('');
-            setEmail('');
-            setPassword('');
-            setPasswordConfirmation('');
+            onCancelar();
+
         } catch (error) {
+
             setErro('Erro ao realizar o cadastro.');
             console.error(error);
+
         }
     }
 
     return (
         <div>
+
             <h1>Cadastro</h1>
 
             <form onSubmit={handleSubmit}>
@@ -87,7 +89,6 @@ function Cadastro({ onCancelar }) {
             </form>
 
             {erro && <p>{erro}</p>}
-            {sucesso && <p>{sucesso}</p>}
 
         </div>
     );

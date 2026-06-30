@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import api from '../services/api';
 
-function Login({ onLogin }) {
+function Login({ onLogin, onCadastrar }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [erro, setErro] = useState('');
@@ -13,14 +13,16 @@ function Login({ onLogin }) {
         try {
             const { data } = await api.post('/login', {
                 email,
-                password
+                password,
             });
 
             localStorage.setItem('token', data.token);
 
             onLogin();
+
         } catch (error) {
             setErro('E-mail ou senha inválidos.');
+            console.error(error);
         }
     }
 
@@ -29,6 +31,7 @@ function Login({ onLogin }) {
             <h1>Login</h1>
 
             <form onSubmit={handleSubmit}>
+
                 <input
                     type="email"
                     placeholder="E-mail"
@@ -48,9 +51,18 @@ function Login({ onLogin }) {
                 <button type="submit">
                     Entrar
                 </button>
+
+                <button
+                    type="button"
+                    onClick={onCadastrar}
+                >
+                    Criar conta
+                </button>
+
             </form>
 
             {erro && <p>{erro}</p>}
+
         </div>
     );
 }
