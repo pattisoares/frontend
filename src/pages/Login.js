@@ -1,0 +1,58 @@
+import { useState } from 'react';
+import api from '../services/api';
+
+function Login({ onLogin }) {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [erro, setErro] = useState('');
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        setErro('');
+
+        try {
+            const { data } = await api.post('/login', {
+                email,
+                password
+            });
+
+            localStorage.setItem('token', data.token);
+
+            onLogin();
+        } catch (error) {
+            setErro('E-mail ou senha inválidos.');
+        }
+    }
+
+    return (
+        <div>
+            <h1>Login</h1>
+
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="email"
+                    placeholder="E-mail"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+
+                <input
+                    type="password"
+                    placeholder="Senha"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                />
+
+                <button type="submit">
+                    Entrar
+                </button>
+            </form>
+
+            {erro && <p>{erro}</p>}
+        </div>
+    );
+}
+
+export default Login;
