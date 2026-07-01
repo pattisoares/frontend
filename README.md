@@ -26,6 +26,14 @@ Aplicação React desenvolvida para consumir a API Laravel de gerenciamento de r
 - Exclusão de recados
 - Logout
 
+## Pré-requisitos
+
+Antes de executar o projeto, é necessário ter instalado:
+
+- Git
+- Node.js
+- npm
+
 ## Como executar o projeto
 
 ## Backend
