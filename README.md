@@ -46,19 +46,34 @@ Caso ainda não tenha instalado o backend, faça o download do repositório:
 
 Após clonar o repositório, siga as instruções presentes no README do backend para configurar o banco de dados e iniciar a API antes de executar o frontend.
 
-### 1. Clonar o repositório
+### 1. Escolha a pasta onde deseja salvar o projeto
+
+Exemplo:
+
+```text
+D:\ProjetoRecados
+```
+Abra um terminal NOVO no VS Code nessa pasta
+
+### 2. Clonar o repositório
 
 ```bash
 git clone https://github.com/pattisoares/frontend.git
 ```
 
-### 2. Instalar as dependências
+### 3. Acesse a pasta criada pelo Git
+
+```bash
+cd frontend
+```
+
+### 4. Instalar as dependências
 
 ```bash
 npm install
 ```
 
-### 3. Iniciar a aplicação
+### 5. Iniciar a aplicação
 
 ```bash
 npm start
