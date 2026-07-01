@@ -1,3 +1,10 @@
+## Projeto completo
+
+Este projeto está dividido em dois repositórios:
+
+- Backend (Laravel): https://github.com/pattisoares/backend
+- Frontend (React): https://github.com/pattisoares/frontend
+
 # Cadastro e Lista de Recados
 
 Aplicação React desenvolvida para consumir a API Laravel de gerenciamento de recados pessoais.
@@ -20,6 +27,16 @@ Aplicação React desenvolvida para consumir a API Laravel de gerenciamento de r
 - Logout
 
 ## Como executar o projeto
+
+## Backend
+
+Esta aplicação depende da API desenvolvida em Laravel.
+
+Caso ainda não tenha instalado o backend, faça o download do repositório:
+
+👉 https://github.com/pattisoares/backend
+
+Após clonar o repositório, siga as instruções presentes no README do backend para configurar o banco de dados e iniciar a API antes de executar o frontend.
 
 ### 1. Clonar o repositório
 
