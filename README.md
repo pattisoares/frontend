@@ -30,9 +30,11 @@ Aplicação React desenvolvida para consumir a API Laravel de gerenciamento de r
 
 Antes de executar o projeto, é necessário ter instalado:
 
+- Node.js v20+
 - Git
-- Node.js
-- npm
+- PHP 8.2+
+- Composer 2
+- MySQL 8 rodando
 
 ## Como executar o projeto
 
