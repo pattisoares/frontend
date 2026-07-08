@@ -12,7 +12,6 @@ function Cadastro({ onCancelar }) {
     async function handleSubmit(e) {
 
         e.preventDefault();
-
         setErro('');
 
         try {
@@ -30,7 +29,30 @@ function Cadastro({ onCancelar }) {
 
         } catch (error) {
 
-            setErro('Erro ao realizar o cadastro.');
+            if (error.response?.status === 422) {
+
+                const errors = error.response.data.errors;
+
+                if (errors.email) {
+                    setErro(errors.email[0]);
+                } else if (errors.password) {
+                    setErro(errors.password[0]);
+                } else if (errors.name) {
+                    setErro(errors.name[0]);
+                } else {
+                    setErro('Verifique os dados informados.');
+                }
+
+            } else if (!error.response) {
+
+                setErro('Não foi possível conectar ao servidor.');
+
+            } else {
+
+                setErro('Erro ao realizar o cadastro.');
+
+            }
+
             console.error(error);
 
         }
