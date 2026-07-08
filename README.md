@@ -39,7 +39,7 @@ Antes de executar o projeto, é necessário ter instalado:
 
 - Node.js 20 ou superior
 - npm 10 ou superior
-- Git
+- Git 2.54.0 ou superior
 
 > **Observação:** Para utilizar todas as funcionalidades da aplicação, o backend da API deve estar em execução.
 
