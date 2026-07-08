@@ -32,16 +32,7 @@ function Cadastro({ onCancelar }) {
             if (error.response?.status === 422) {
 
                 const errors = error.response.data.errors;
-
-                if (errors.email) {
-                    setErro(errors.email[0]);
-                } else if (errors.password) {
-                    setErro(errors.password[0]);
-                } else if (errors.name) {
-                    setErro(errors.name[0]);
-                } else {
-                    setErro('Verifique os dados informados.');
-                }
+                setErro(Object.values(errors)[0][0]);
 
             } else if (!error.response) {
 
