@@ -11,10 +11,17 @@ Aplicação React desenvolvida para consumir a API Laravel de gerenciamento de r
 
 ## Tecnologias
 
-- React
-- JavaScript
+- React 19
+- JavaScript (ES6+)
 - Axios
-- CSS
+- CSS3
+
+## Ferramentas utilizadas
+
+- Node.js 24.17.0
+- npm 11.13.0
+- Git 2.54.0
+- GitHub
 
 ## Funcionalidades
 
@@ -30,11 +37,11 @@ Aplicação React desenvolvida para consumir a API Laravel de gerenciamento de r
 
 Antes de executar o projeto, é necessário ter instalado:
 
-- Node.js v20+
+- Node.js 20 ou superior
+- npm 10 ou superior
 - Git
-- PHP 8.2+
-- Composer 2
-- MySQL 8 rodando
+
+> **Observação:** Para utilizar todas as funcionalidades da aplicação, o backend da API deve estar em execução.
 
 ## Como executar o projeto
 
